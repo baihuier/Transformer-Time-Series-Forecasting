@@ -60,9 +60,9 @@ def plot_prediction(title, path_to_save, src, tgt, prediction, sensor_number, in
 
     # formatting
     # 设置图表格式
-    plt.grid(b=True, which='major', linestyle = 'solid')
+    plt.grid(visible=True, which='major', linestyle = 'solid')
     plt.minorticks_on()
-    plt.grid(b=True, which='minor', linestyle = 'dashed', alpha=0.5)
+    plt.grid(visible=True, which='minor', linestyle = 'dashed', alpha=0.5)
     plt.xlabel("Time Elapsed")
     plt.ylabel("Humidity (%)")
     plt.legend()
@@ -93,8 +93,8 @@ def plot_training(epoch, path_to_save, src, prediction, sensor_number, index_in,
 
     plt.figure(figsize=(15,6))
     plt.rcParams.update({"font.size" : 18})
-    plt.grid(b=True, which='major', linestyle = '-')
-    plt.grid(b=True, which='minor', linestyle = '--', alpha=0.5)
+    plt.grid(visible=True, which='major', linestyle = '-')
+    plt.grid(visible=True, which='minor', linestyle = '--', alpha=0.5)
     plt.minorticks_on()
 
     # 绘制输入序列和预测序列
@@ -132,8 +132,8 @@ def plot_training_3(epoch, path_to_save, src, sampled_src, prediction, sensor_nu
 
     plt.figure(figsize=(15,6))
     plt.rcParams.update({"font.size" : 18})
-    plt.grid(b=True, which='major', linestyle = '-')
-    plt.grid(b=True, which='minor', linestyle = '--', alpha=0.5)
+    plt.grid(visible=True, which='major', linestyle = '-')
+    plt.grid(visible=True, which='minor', linestyle = '--', alpha=0.5)
     plt.minorticks_on()
 
     ## REMOVE DROPOUT FOR THIS PLOT TO APPEAR AS EXPECTED !! DROPOUT INTERFERES WITH HOW THE SAMPLED SOURCES ARE PLOTTED
