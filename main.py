@@ -20,11 +20,16 @@ def main(
     path_to_save_model = "save_model/",        # 模型保存路径
     path_to_save_loss = "save_loss/",          # 损失记录保存路径
     path_to_save_predictions = "save_predictions/",  # 预测结果保存路径
-    device = "cpu"              # 运行设备（CPU/GPU）
+    device = None              # 修改默认值为None，如果启动时不指定，则会自动选择使用cuda或cpu
 ):
     """
     主函数：加载数据，训练模型并进行预测
     """
+    # 自动选择设备
+    if device is None:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"Using device: {device}")
+
     # 清理输出目录
     clean_directory()
 
@@ -51,7 +56,7 @@ if __name__ == "__main__":
     parser.add_argument("--path_to_save_model",type=str,default="save_model/")      # 模型保存路径
     parser.add_argument("--path_to_save_loss",type=str,default="save_loss/")        # 损失保存路径
     parser.add_argument("--path_to_save_predictions",type=str,default="save_predictions/")  # 预测结果保存路径
-    parser.add_argument("--device", type=str, default="cpu")       # 运行设备
+    parser.add_argument("--device", type=str, default=None)       # 运行设备
     args = parser.parse_args()
 
     # 使用解析的参数运行主函数
