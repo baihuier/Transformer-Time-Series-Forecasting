@@ -1,0 +1,38 @@
+# Python字节码文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 模型文件和训练数据
+*.joblib
+*.pkl
+*.h5
+*.model
+train_history/
+save_loss/
+save_model/
+save_predictions/
+
+# 日志文件
+*.log
+logs/
+
+# 虚拟环境
+venv/
+env/
+.env/
+.venv/
+
+# IDE相关
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp 
