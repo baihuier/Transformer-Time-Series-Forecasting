@@ -1,5 +1,5 @@
 import argparse
-# from train_teacher_forcing import *
+# from train_teacher_forcing import *   # 选择使用哪种训练方法
 from train_with_sampling import *
 from DataLoader import *
 from torch.utils.data import DataLoader
